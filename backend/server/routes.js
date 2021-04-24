@@ -27,6 +27,7 @@ routes.get('/User/:name', async (req, res) => {
 routes.post('/User', async (req, res) => {
     try{
         const {codInterno, name, passWord, email} = req.body;
+        console.log(req.body);
         const createdUser = await user.create({codInterno, name, passWord, email});
         return res.status(200).json(createdUser);
     }
